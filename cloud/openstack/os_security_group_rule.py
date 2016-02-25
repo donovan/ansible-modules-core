@@ -289,7 +289,7 @@ def main():
         if remote_group:
             remotegroup = cloud.get_security_group(remote_group)
         else:
-            remotegroup = None
+            remotegroup = { 'id' : None }
 
         if module.check_mode:
             module.exit_json(changed=_system_state_change(module, secgroup, remotegroup))
